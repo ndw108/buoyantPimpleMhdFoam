@@ -1,0 +1,72 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2212                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    object      B;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [1 0 -2 0 0 -1 0];
+
+internalField   uniform (-4.3651e-03 0 0);
+
+boundaryField
+{
+    inlet
+    {
+        type            directionMixed;
+        refValue        uniform (-4.3651e-03 0 0);
+        refGradient     uniform (0 0 0);
+        valueFraction   uniform (0 0 0 1 0 0); //(xx xy xz yy yz zz)
+        value           uniform (-4.3651e-03 0 0);	
+    }
+
+    outlet
+    {
+        type            directionMixed;
+        refValue        uniform (-4.3651e-03 0 0);
+        refGradient     uniform (0 0 0);
+        valueFraction   uniform (0 0 0 1 0 0); //(xx xy xz yy yz zz)
+        value           uniform (-4.3651e-03 0 0);	
+    }
+
+    frontwall
+    {
+        type            empty;
+    }
+
+    backwall
+    {
+        type            empty;
+    }
+
+    hotwall
+    {
+        type            directionMixed;
+        refValue        uniform (-4.3651e-03 0 0);
+        refGradient     uniform (0 0 0);
+        valueFraction   uniform (1 0 0 0 0 0); //(xx xy xz yy yz zz)
+        value           uniform (-4.3651e-03 0 0);
+    }
+
+    coldwall
+    {
+        type            directionMixed;
+        refValue        uniform (-4.3651e-03 0 0);
+        refGradient     uniform (0 0 0);
+        valueFraction   uniform (1 0 0 0 0 0); //(xx xy xz yy yz zz)
+        value           uniform (-4.3651e-03 0 0);
+    }
+
+}
+
+
+// ************************************************************************* //
