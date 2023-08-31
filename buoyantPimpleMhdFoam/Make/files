@@ -1,3 +1,0 @@
-buoyantPimpleMhdFoam.C
-
-EXE = $(FOAM_APPBIN)/buoyantPimpleMhdFoam
