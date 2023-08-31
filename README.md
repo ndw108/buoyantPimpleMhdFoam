@@ -1,5 +1,5 @@
 # buoyantPimpleMhdFoam
-buoyant heat transfer &amp; induction based MHD fluid solver
+buoyant heat transfer &amp; induction based MHD fluid solver built on OpenFOAM v2212
 
 This solver combines existing solvers buoyantPimpleFoam and mhdFoam to create an induction MHD solver with compressible heat transfer. 
 Thermophysical equation of state model has been confirmed valid for both "icoPolynomial" and "Boussinesq". 
