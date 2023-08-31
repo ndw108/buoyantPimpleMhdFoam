@@ -1,0 +1,59 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2212                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      thermophysicalProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+thermoType
+{
+    type            heRhoThermo;
+    mixture         pureMixture;
+    transport       polynomial;
+    thermo          hPolynomial;
+    equationOfState icoPolynomial;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+pRef            0;
+dpdt off;
+
+
+
+mixture
+{
+    specie
+    {
+        molWeight       29;
+    }
+    thermodynamics                                                             
+    {                                                                          
+        CpCoeffs<8>     (971 0 0 0 0 0 0 0);   // 971
+        Sf              0;                                                     
+        Hf              0;                                                     
+    }
+
+    equationOfState                                                            
+    {                                                                          
+        rhoCoeffs<8>    (8.78552 -7.54226e-2 2.69671e-4 -3.428e-7 0 0 0 0); //1.17               
+    }
+    
+    transport                                                                  
+    {                                                                          
+        muCoeffs<8>     (3.2575e-5 -7.5616e-7 7.4725e-9 -2.86507e-11 3.89067e-14 0 0 0); 
+        kappaCoeffs<8>  (-3.06e-4 9.891e-5 -3.4657e-8 0 0 0 0 0);  /*0.02625*/         
+    }
+}
+
+
+// ************************************************************************* //
